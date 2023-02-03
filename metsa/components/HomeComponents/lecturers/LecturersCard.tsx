@@ -14,16 +14,20 @@ import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Button } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
+import Link from 'next/link';
 
 
 interface Props {
-  image: string,
   title: string
+  subtitle: string
+  description: string
+  mainImage: string
+  slug: string
 }
 
-const LecturersCard = () => {
+const LecturersCard: React.FC<Props> = ({ title, subtitle, description, mainImage, slug }) => {
   return (
-    <Card className="w-full">
+    <Card className="w-full h-full">
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -35,29 +39,29 @@ const LecturersCard = () => {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Engineer Ganiu Jumah"
-        subheader="HOD"
+        title={title}
+        subheader={subtitle}
       />
       <CardMedia
+        className='w-full h-60'
         component="img"
-        height="194"
-        image="/images/pic-6.png"
-        alt="Paella dish"
+        height=""
+        image={mainImage}
+        alt={title}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {description}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing sx={{
+      <CardActions className='relative' disableSpacing sx={{
         justifyContent: "center"
       }}>
-
-        <Button startIcon={<PersonIcon />} className="bg-black text-white items-center flex hover:bg-red-500">
-          View Pofile
-        </Button>
+        <Link href={`/lecturers/${slug}`}>
+          <Button startIcon={<PersonIcon />} className="bg-black bottom-0 text-white items-center flex hover:bg-red-500">
+            View Pofile
+          </Button>
+        </Link>
       </CardActions>
     </Card>
 

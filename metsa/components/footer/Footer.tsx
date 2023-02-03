@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
       </div>
       <div className=' flex px-10 py-2 justify-between items-center bg-red-900'>
-        <p className='text-white'> &#169;2022 copyright Mechatronics Engineering Department</p>
+        <p className='text-white'> &#169;2022 Copyright Mechatronics Engineering Department</p>
         <p className='text-white'>Developed By Faleye Caleb</p>
       </div>
     </div>

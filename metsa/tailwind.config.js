@@ -8,5 +8,9 @@ module.exports = {
   theme: {
     extend: {},
   },
+
+  cardHeight: {
+    'fitted': '200px'
+  },
   plugins: [],
 }

@@ -19,18 +19,18 @@ const HeroBackground = styled(Box)({
 
 const HeroSection = () => {
 
-  const { isLogin } = useSelector((state: CounterState) => state.counter);
+  // const { isLogin } = useSelector((state: CounterState) => state.counter);
   return (
     <div>
       <HeroBackground className='mb-16'>
-        <Box className='flex flex-col space-y-3 items-center md:items-start justify-center md:ml-12 bg-fuchsia-500 sm:bg-inherit gap-2' width={"50%"} sx={{
+        <Box className='flex flex-col space-y-3 items-center md:items-start justify-center md:ml-12 bg-red-600 sm:bg-inherit gap-2' width={"50%"} sx={{
           height: "550px"
         }}>
-          <Typography className="text-center text-3xl md:text-5xl md:text-start" variant="h3" color="white">Welcome To Mechatronics Department YabaTech Chapter</Typography>
-          <Typography className="text-center md:text-start" variant="subtitle1" color="white">Welcome To Mechatronics Department YabaTech Chapter</Typography>
-          {
-            !isLogin && <Link href="/authentication/register"><Button className='bg-white text-black hover:bg-black hover:text-white md:bg-red-500' variant='contained' color='warning'>Register</Button></Link>
-          }
+          <Typography className="text-center text-xl md:text-5xl md:text-start" variant="h3" color="white">Welcome To Mechatronics Engineering Department YabaTech Chapter</Typography>
+          <Typography className="text-center text-sm md:text-lg md:text-start" variant="subtitle1" color="white">Welcome To Mechatronics Department YabaTech Chapter</Typography>
+
+          <Link href="/department"><Button className='bg-white text-black hover:bg-black hover:text-white md:bg-red-500' variant='contained' color='warning'>Let's Explore</Button></Link>
+
         </Box>
       </HeroBackground>
 
